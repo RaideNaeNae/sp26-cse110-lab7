@@ -2,4 +2,8 @@
 Raiden Louie
 1) You would fit your automated tests within a GitHub action that runs whenever code is pushed. This is ro create an automated safety net. It guarantees that every time a teammate pushes code or opens a Pull Request, the entire test suite runs automatically in a clean environment. This will catch issues before they can cause more problems when pushed or merged.
 2) No, an end-to-end test is not needed to check if a specific function returns the correct output given a specific input.
-
+3) The difference between navigation and snapshot mode is that navigation mode simulates a user opening the webpage completely fresh, so it can be used to measure loading performance metrics, like how long it takes for text to show up on screen, while snapshot mode takes a picture of the webpage at a specific moment in time, usually after a user has already interacted with it, opened menus, or modified the page structure and is used to analyze the current HTML layout to find issues.
+4) Three imporvements we can make based on the Lighthouse results:
+- Converting images to modern web formats and compressing them would drastically reduce the page weight and make the site load much faster.
+- Loading non-critical scripts asynchronously would allow the page content to appear instantly since the JavaScript files and external styles currently force the browser to stop and wait for them to load. 
+- Adding explicit image dimensions would prevent the page layout from jumping around when images finish loading, fixing the Cumulative Layout Shift score because the product images inside the Web Components don’t have hardcoded width and height attributes. 
